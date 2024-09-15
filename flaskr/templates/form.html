@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flask test</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <h1>MY TODO</h1>
+    <h2>enter new todo event</h2>
+    <form method="post" action="{{ url_for('register') }}">
+      <table border="1">
+        <tr>
+          <th>id</th>
+          <th>status</th>
+          <th>event</th>
+          <th>limit</th>
+        </tr>
+        <tr>
+          <td><input type="text" name="todo_id"></td>
+          <td><input type="text" name="status"></td>
+          <td><input type="text" name="event"></td>
+          <td><input type="text" name="limits"></td>
+        </tr>
+      </table>
+      <br />
+      <input type="submit" value="submit" />
+    </form>
+  </body>
+</html>

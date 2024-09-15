@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flask test</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <h1>MY TODO</h1>
+    <h2>My todo list</h2>
+
+    {% if todos == [] %}
+      <p>There are no event yet.</p>
+    {% else %}
+      <table border="1">
+        <tr>
+          <th>id</th>
+          <th>status</th>
+          <th>event</th>
+          <th>limit</th>
+        </tr>
+        {% for todo in todos %}
+          <tr>
+              <td>{{ todo.todo_id }}</td>
+              <td>{{ todo.status }}</td>
+              <td>{{ todo.event }}</td>
+              <td>{{ todo.limits }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% endif %}
+    <p></p>
+    <a href="{{ url_for('form') }}">EDIT</a>
+  </body>
+</html>
