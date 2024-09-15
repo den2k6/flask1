@@ -1,8 +1,8 @@
-# flask の実装テスト
+# Flask の実装テスト
 
 ## 概要
 
-- flask の実装を試みる
+- Try implementing Flask
 
 ## 環境設定
 
@@ -14,7 +14,7 @@
 ### Windows
 
 - `$env:FLASK_APP=flaskr`
-- `env:FLASK_DEBUG=1`
+- `$env:FLASK_DEBUG=1`
 
 ## 実行
 
@@ -23,6 +23,6 @@
 
 ## 予定
 
-* データの削除
-* データの更新
-* その他たくさん
+* add data delete function
+* add data update function
+* and many more
