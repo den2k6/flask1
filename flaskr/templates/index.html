@@ -26,6 +26,11 @@
               <td>{{ todo.status }}</td>
               <td>{{ todo.event }}</td>
               <td>{{ todo.limits }}</td>
+              <td>Edit</td>
+              <td><form action="{{ url_for('delete', todo_id=todo.todo_id) }}" method="POST">
+                <button type="submit">Delete</button>
+            </form></td>
+            </tr>
           </tr>
         {% endfor %}
       </table>

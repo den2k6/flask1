@@ -17,7 +17,9 @@ def index():
 
     todos = []
     for row in db_todos:
-        todos.append({"todo_id": row[0], "status": row[1], "event": row[2], "limits": row[3]})
+        todos.append(
+            {"todo_id": row[0], "status": row[1], "event": row[2], "limits": row[3]}
+        )
     return render_template("index.html", todos=todos)
 
 
@@ -36,7 +38,19 @@ def register():
     limits = request.form["limits"]
 
     con = sqlite3.connect(DATABASE)
-    con.execute("INSERT INTO todos VALUES(?, ?, ?, ?)", [todo_id, status, event, limits])
+    con.execute(
+        "INSERT INTO todos VALUES(?, ?, ?, ?)", [todo_id, status, event, limits]
+    )
+    con.commit()
+    con.close()
+    return redirect(url_for("index"))
+
+
+@app.route("/delete/<todo_id>", methods=["POST"])
+def delete(todo_id):
+    """delete"""
+    con = sqlite3.connect(DATABASE)
+    con.execute("DELETE FROM todos WHERE todo_id=?", [todo_id])
     con.commit()
     con.close()
     return redirect(url_for("index"))
