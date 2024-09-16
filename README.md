@@ -21,8 +21,11 @@
 - `flask run`
 - `http://127.0.0.1:5000/`
 
-## 予定
+## 更新履歴
 
 * add data delete function
+
+## 予定
+
 * add data update function
 * and many more
